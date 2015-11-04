@@ -1,0 +1,39 @@
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 44px;
+  padding: 0 10px;
+  background-color: rgba(247, 247, 247, 0.98);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+  -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.85); }
+  .title-bar .title {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin: 0 -10px;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+    line-height: 44px;
+    text-align: center;
+    white-space: nowrap; }
+  .title-bar .icon {
+    position: relative;
+    z-index: 20;
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 24px;
+    color: gray;
+    line-height: 1;
+    text-decoration: none; }
+  .title-bar .pull-left {
+    float: left; }
+  .title-bar .pull-right {
+    float: right; }
+
+/*# sourceMappingURL=title-bar.css.map */

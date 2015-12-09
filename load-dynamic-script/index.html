@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button>Hello, world!</button>
+
+    <script src="./js/loader.js"></script>
+    <script>
+      var jquery     = '//cdn.bootcss.com/jquery/2.1.4/jquery.min.js',
+          base       = './js/base.js',
+          dependence = './js/dependence.js'
+
+      Loader.load([ [jquery, base], [dependence] ])
+    </script>
+  </body>
+</html>

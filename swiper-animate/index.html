@@ -61,8 +61,13 @@
     </div>
   </div>
 
-  <script src="js/swiper.min.js"></script>
-  <script src="js/swiper.animate.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/loader.js"></script>
+  <script>
+    var swiper     = './js/swiper.min.js',
+        animate    = './js/swiper.animate.min.js',
+        main       = './js/main.js'
+
+    Loader.load([ [swiper, animate], [main] ])
+  </script>
 </body>
 </html>

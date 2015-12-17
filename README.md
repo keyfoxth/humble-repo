@@ -1,12 +1,3 @@
-### [Data-Structures-and-Algorithms-with-JavaScript](./Data-Structures-and-Algorithms-with-JavaScript)
-《数据结构与算法 JavaScript 描述》
-
-### [Javescript-the-good-parts](./Javescript-the-good-parts)
-《JavaScript 语言精粹》
-
-### [swiper-animate](./swiper-animate)
-swiper.js + animate.js
-
 ### [icloud-clone](./icloud-clone)
 [icloud](//www.icloud.com/) 的背景克隆
 
@@ -18,3 +9,6 @@ swiper.js + animate.js
 
 ### [div-center](./div-center)
 [博客文章](//keyfoxth.github.io/2015/12/10/div-center/)
+
+### [ripple-button](./ripple-button)
+[涟漪按钮](//keyfoxth.github.io/demo/ripple-button)

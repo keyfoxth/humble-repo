@@ -12,3 +12,6 @@
 
 ### [ripple-button](./ripple-button)
 [涟漪按钮](//keyfoxth.github.io/demo/ripple-button)
+
+### [line-scanning](./line-scanning)
+[线段扫描](//keyfoxth.github.io/demo/line-scanning)

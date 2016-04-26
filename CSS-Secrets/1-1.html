@@ -32,6 +32,28 @@
       a {
         color: inherit;
       }
+      .callout {
+        position: absolute;
+        margin: 1em 0;
+        padding: .3em .8em;
+        border: 1px solid rgba(0,0,0,.1);
+        background: #ccc;
+        border-radius: .2em;
+        box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+        color: black;
+      }
+      .callout::before {
+        content: "";
+        position: absolute;
+        top: -.4em;
+        left: 1em;
+        padding: .35em;
+        background: inherit;
+        border: inherit;
+        border-right: 0;
+        border-bottom: 0;
+        transform: rotate(45deg);
+      }
     </style>
   </head>
   <body>
@@ -41,5 +63,6 @@
     <button class="ok">OK</button>
     <hr>
     <a href="https://www.google.com">Google</a>
+    <div class="callout">Test</div>
   </body>
 </html>

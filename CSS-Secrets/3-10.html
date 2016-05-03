@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>平行四边形</title>
+    <style>
+      .parallelograms .button {
+        display: inline-block;
+        padding: .5em 1em;
+        border: 0;
+        margin: 1em;
+        background: #58a;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        font: 200%/1 sans-serif;
+      }
+      .parallelograms .button {
+        transform: skewX(45deg);
+      }
+      .parallelograms .button > div {
+        transform: skewX(-45deg);
+      }
+      .parallelograms-pseudo .button {
+        position: relative;
+        display: inline-block;
+        padding: .5em 1em;
+        border: 0;
+        margin: 1em;
+        background: transparent;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        font: 200%/1 sans-serif;
+      }
+      .parallelograms-pseudo .button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: #58a;
+        transform: skewX(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallelograms">
+      <a href="#" class="button"><div>Click me</div></a>
+      <button class="button"><div>Click me</div></button>
+    </div>
+    <div class="parallelograms-pseudo">
+      <a href="#" class="button"><div>Click me</div></a>
+      <button class="button"><div>Click me</div></button>
+    </div>
+  </body>
+</html>

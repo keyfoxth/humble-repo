@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自适应的椭圆</title>
+    <style>
+      .ellipse {
+        width: 16em;
+        height: 10em;
+        background: #fb3;
+        border-radius: 50%;
+      }
+      .half-ellipse > div {
+        width: 16em;
+        height: 10em;
+        margin: 1em;
+        background: #fb3;
+        display: inline-block;
+      }
+      .half-ellipse > div:nth-child(1) {
+        border-radius: 50% / 100% 100% 0 0;
+      }
+      .half-ellipse > div:nth-child(2) {
+        border-radius: 50% / 0 0 100% 100%;
+      }
+      .half-ellipse > div:nth-child(3) {
+        border-radius: 100% 0 0 100% / 50%;
+      }
+      .half-ellipse > div:nth-child(4) {
+        border-radius: 0 100% 100% 0 / 50%;
+      }
+      .quarter-ellipse > div {
+        width: 16em;
+        height: 10em;
+        margin: 1em;
+        background: #fb3;
+        display: inline-block;
+      }
+      .quarter-ellipse > div:nth-child(1) {
+        border-radius: 100% 0 0 0;
+      }
+      .quarter-ellipse > div:nth-child(2) {
+        border-radius: 0 100% 0 0;
+      }
+      .quarter-ellipse > div:nth-child(3) {
+        border-radius: 0 0 100% 0;
+      }
+      .quarter-ellipse > div:nth-child(4) {
+        border-radius: 0 0 0 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ellipse"></div>
+    <div class="half-ellipse">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="quarter-ellipse">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

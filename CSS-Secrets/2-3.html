@@ -2,38 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>灵活的背景定位</title>
     <style>
-      body {
-        font-size: 16px;
-      }
-      .something-meaningful {
-        margin: 8px; /* 不关事的 */
-        padding: .5em;
-        max-width: 20em;
-        background: #655;
-      }
-      .something-meaningful > div {
-        padding: 1em;
-        background: tan;
-        border-radius: .8em;
-      }
-      .box-shadow {
-        outline: .5em solid #655;
-        box-shadow: 0 0 0 .4em #655;
-
-        max-width: 18em;
-        padding: 1em;
+      div {
+        background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat bottom right #58a;
+        max-width: 10em;
+        min-height: 5em;
         margin: 1em;
-        background: tan;
-        border-radius: .8em;
+        padding: 10px 20px;
+        color: white;
+        font: 100%/1 sans-serif;
+      }
+      .background-position {
+        background-position: right 20px bottom 10px;
+      }
+      .background-origin {
+        background-origin: content-box;
+      }
+      .calc {
+        background-position: calc(100% - 20px) calc(100% - 10px);
       }
     </style>
   </head>
   <body>
-    <div class="something-meaningful">
-      <div>I have a nice subtle inner rounding, don't I look pretty?</div>
-    </div>
-    <div class="box-shadow">I have a nice subtle inner rounding, don't I look pretty?</div>
+    <div class="background-position">Background Position</div>
+    <div class="background-origin">Background Origin</div>
+    <div class="calc">Calc</div>
   </body>
 </html>

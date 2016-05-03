@@ -2,47 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>半透明边框</title>
     <style>
       html {
         background: url('http://csssecrets.io/images/stone-art.jpg') no-repeat center center fixed;
         background-size: cover;
         font-size: 32px;
+        overflow: hidden;
       }
       div {
         border: 50px solid hsla(0,0%,100%,.5);
         background: white;
         background-clip: padding-box;
 
-        max-width: 10em;
+        width: 10em;
         padding: 2em;
-        margin: 2em auto 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font: 100%/1.5 sans-serif;
         text-align: center;
-      }
-      /* 假“边框”出现在元素的外圈，它们并不会响应鼠标事件，比如悬停或点击。 */
-      .multiple-borders {
-        border: 0px;
-        box-shadow: 0 0 0 15px #655,
-                    0 0 0 35px deeppink,
-                    0 2px 5px 40px rgba(0,0,0,.6);
-        cursor: pointer;
-      }
-      .multiple-borders-inset {
-        box-shadow: 0 0 0 20px deeppink inset,
-                    0 0 0 35px #655 inset,
-                    0 2px 5px 5px rgba(0,0,0,.6);
-      }
-      .outline-borders {
-        border: 15px solid #655;
-        outline: 20px solid deeppink;
-      }
-      .minus-outline {
-        background: #ccc;
-        border: 0px;
-        border-radius: .5em;
-        outline: .1em dashed white;
-        outline-offset: -.5em;
       }
     </style>
   </head>
@@ -51,9 +31,5 @@
       Can I haz semi-transparent borders?
       Pretty please?
     </div>
-    <div class="multiple-borders">multiple-borders</div>
-    <div class="multiple-borders multiple-borders-inset">multiple-borders-inset</div>
-    <div class="outline-borders">outline-borders</div>
-    <div class="minus-outline">minus-outline</div>
   </body>
 </html>

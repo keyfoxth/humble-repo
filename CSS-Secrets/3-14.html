@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>简单的饼图</title>
+    <style>
+      .pie {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border-radius: 50%;
+        background: yellowgreen;
+        background-image: linear-gradient(to right, transparent 50%, #655 0);
+      }
+      .pie::before {
+        content: "";
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+      }
+      .rotate-1::before {
+        transform: rotate(.1turn);
+      }
+      .rotate-2::before {
+        transform: rotate(.2turn);
+      }
+      .rotate-4::before {
+        transform: rotate(.4turn);
+      }
+      .rotate-6::before {
+        background: #655;
+        transform: rotate(.1turn);
+      }
+      .rotate-8::before {
+        background: #655;
+        transform: rotate(.3turn);
+      }
+      @keyframes spin {
+      	to { transform: rotate(.5turn); }
+      }
+      @keyframes bg {
+      	50% { background: #655; }
+      }
+      .ani::before {
+        animation: spin 3s linear infinite, bg 6s step-end infinite;
+      }
+      .pie-2 {
+        position: relative;
+        width: 100px;
+        line-height: 100px;
+        display: inline-block;
+        border-radius: 50%;
+        background: yellowgreen;
+        background-image: linear-gradient(to right, transparent 50%, #655 0);
+        color: transparent;
+        text-align: center;
+      }
+      .pie-2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        animation: spin 50s linear infinite, bg 100s step-end infinite;
+        animation-play-state: paused;
+        animation-delay: inherit;
+      }
+      @keyframes foo {
+        from { background: red; }
+        to { background: yellowgreen; }
+      }
+      section {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        animation: foo 1s both linear;
+        animation-play-state: paused;
+      }
+      section:nth-of-type(2) {
+        animation-delay: -.2s;
+      }
+      section:nth-of-type(3) {
+        animation-delay: -.4s;
+      }
+      section:nth-of-type(4) {
+        animation-delay: -.6s;
+      }
+      section:nth-of-type(5) {
+        animation-delay: -.8s;
+      }
+      section:nth-of-type(6) {
+        animation-delay: -1s;
+      }
+      svg {
+        width: 100px;
+        height: 100px;
+        transform: rotate(-90deg);
+        background: yellowgreen;
+        border-radius: 50%;
+      }
+      circle {
+        fill: yellowgreen;
+        stroke: #655;
+        stroke-width: 32;
+      }
+      @keyframes fillup {
+        to { stroke-dasharray: 100 100; }
+      }
+      .fillup {
+        stroke-dasharray: 0 100;
+        animation: fillup 5s linear infinite;
+      }
+      .pie-3 {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pie rotate-1"></div>
+    <div class="pie rotate-2"></div>
+    <div class="pie rotate-4"></div>
+    <div class="pie rotate-6"></div>
+    <div class="pie rotate-8"></div>
+    <div class="pie ani"></div>
+    <hr>
+    <div class="pie-2">10%</div>
+    <div class="pie-2">20%</div>
+    <div class="pie-2">40%</div>
+    <div class="pie-2">60%</div>
+    <div class="pie-2">80%</div>
+    <hr>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <hr>
+    <svg viewBox="0 0 32 32">
+      <circle r="16" cx="16" cy="16" class="fillup"/>
+    </svg>
+    <hr>
+    <div class="pie-3">10%</div>
+    <div class="pie-3">20%</div>
+    <div class="pie-3">40%</div>
+    <div class="pie-3">60%</div>
+    <div class="pie-3">80%</div>
+    <script>
+      function $$(selector, context) {
+        context = context || document
+        var elements = context.querySelectorAll(selector)
+        return Array.prototype.slice.call(elements)
+      }
+      $$('.pie-2').forEach(function (pie) {
+        var p = parseFloat(pie.textContent)
+        pie.style.animationDelay = '-' + p + 's'
+      })
+      $$('.pie-3').forEach(function (pie) {
+        var p = parseFloat(pie.textContent)
+        var NS = "http://www.w3.org/2000/svg"
+        var svg = document.createElementNS(NS, "svg")
+        var circle = document.createElementNS(NS, "circle")
+        var title = document.createElementNS(NS, "title")
+        circle.setAttribute("r", 16)
+        circle.setAttribute("cx", 16)
+        circle.setAttribute("cy", 16)
+        circle.setAttribute("stroke-dasharray", p + " 100")
+        svg.setAttribute("viewBox", "0 0 32 32")
+        title.textContent = pie.textContent
+        pie.textContent = ''
+        svg.appendChild(title)
+        svg.appendChild(circle)
+        pie.appendChild(svg)
+      });
+    </script>
+  </body>
+</html>

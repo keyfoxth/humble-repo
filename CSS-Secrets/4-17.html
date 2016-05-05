@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>染色效果</title>
+    <style>
+      .color-tint-filter {
+        max-width: 640px;
+        transition: .5s filter, .5s -webkit-filter;
+        -webkit-filter: sepia() saturate(4) hue-rotate(295deg);
+        filter: sepia() saturate(4) hue-rotate(295deg);
+      }
+      .color-tint-filter:hover, .color-tint-filter:focus {
+        -webkit-filter: none;
+      	filter: none;
+      }
+      .color-tint {
+        width: 640px;
+        height: 440px;
+        background-image: url(http://csssecrets.io/images/tiger.jpg);
+        background-size: cover;
+        background-color: hsl(335, 100%, 50%);
+        background-blend-mode: luminosity;
+        transition: .5s background-color;
+      }
+      .color-tint:hover, .color-tint:focus {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="color-tint-filter" src="http://csssecrets.io/images/tiger.jpg" />
+    <hr>
+    <div class="color-tint"></div>
+  </body>
+</html>

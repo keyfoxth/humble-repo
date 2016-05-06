@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>折角效果</title>
+    <style>
+      .folded-corner {
+        width: 12em;
+        padding: 2em;
+        background: #58a;
+        background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em, linear-gradient(-135deg, transparent 1.41em, #58a 0);
+        color: white;
+	      font: 100%/1.6 sans-serif;
+      }
+      .note {
+        width: 12em;
+        padding: 2em;
+        position: relative;
+        background: #58a;
+        background: linear-gradient(-150deg, transparent 1.5em, #58a 0);
+        border-radius: .5em;
+        color: white;
+	      font: 100%/1.6 sans-serif;
+      }
+      .note::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) no-repeat 100% 0;
+        width: 1.73em;
+        height: 3em;
+        transform: translateY(-1.3em) rotate(-30deg);
+        transform-origin: bottom right;
+        border-bottom-left-radius: inherit;
+        box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+      }
+      /* SCSS
+      @mixin folded-corner($background, $size, $angle: 30deg) {
+        position: relative;
+        background: $background;
+        background:
+          linear-gradient($angle - 180deg,
+          transparent $size, $background 0);
+        border-radius: .5em;
+        $x: $size / sin($angle);
+        $y: $size / cos($angle);
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0; right: 0;
+          background: linear-gradient(to left bottom,
+          transparent 50%, rgba(0,0,0,.2) 0,
+          rgba(0,0,0,.4)) 100% 0 no-repeat;
+          width: $y; height: $x;
+          transform: translateY($y - $x)
+          rotate(2*$angle - 90deg);
+          transform-origin: bottom right;
+          border-bottom-left-radius: inherit;
+          box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.2);
+        }
+      }
+      .note {
+        @include folded-corner(#58a, 2em, 40deg);
+      }
+      */
+    </style>
+  </head>
+  <body>
+    <div class="folded-corner">“The only way to get rid of a temptation is to yield to it.” — Oscar Wilde, The Picture of Dorian Gray</div>
+    <hr>
+    <div class="note">“The only way to get rid of a temptation is to yield to it.” — Oscar Wilde, The Picture of Dorian Gray</div>
+  </body>
+</html>

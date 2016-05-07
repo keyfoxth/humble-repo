@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>扩大可点击区域</title>
+    <style>
+      .hit-area-border {
+        padding: .3em .5em;
+        border: 10px solid transparent;
+        border-radius: 50%;
+        background: #58a;
+        background-clip: padding-box;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+        color: white;
+        font: bold 150%/1 sans-serif;
+        cursor: pointer;
+      }
+      .hit-area {
+        position: relative;
+        padding: .3em .5em;
+        background: #58a;
+        border-radius: 50%;
+        border: 1px solid rgba(0,0,0,.5);
+        box-shadow: 0 .1em .2em -.05em rgba(0,0,0,.5);
+        color: white;
+      	font: bold 150%/1 sans-serif;
+      	cursor: pointer;
+      }
+      .hit-area:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="hit-area-border">+</button>
+    <button class="hit-area">+</button>
+  </body>
+</html>

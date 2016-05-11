@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>打字动画</title>
+    <style>
+      @keyframes typing {
+        from { width: 0; }
+      }
+      @keyframes caret {
+        50% { border-right-color: transparent; }
+      }
+      h1 {
+        font: bold 200% Consolas, Monaco, monospace;
+        width: 15ch;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: .05em solid;
+        animation: typing 8s steps(15), caret 1s steps(1) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS is awesome!</h1>
+  </body>
+</html>

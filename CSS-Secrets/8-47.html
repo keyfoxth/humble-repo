@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>沿环形路径平移的动画</title>
+    <style>
+      @keyframes spin {
+        to { transform: rotate(1turn); }
+      }
+      @keyframes spin-2 {
+      	from { transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn); }
+      	to { transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn); }
+      }
+      .avatar {
+        animation: spin 5s infinite linear;
+        transform-origin: 50% 150px;
+      }
+      .avatar > img {
+        animation: inherit;
+        animation-direction: reverse;
+      }
+      .avatar-2 {
+      	animation: spin-2 5s infinite linear;
+      }
+
+      /* Basic styling */
+      .path {
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        border-radius: 50%;
+        background: #fb3;
+      }
+      .avatar {
+        width: 50px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .avatar > img {
+        display: block;
+        width: inherit;
+      }
+      .avatar-2 {
+        display: block;
+        width: 50px;
+        margin: calc(50% - 25px) auto 0;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="path">
+    	<div class="avatar">
+    		<img src="http://lea.verou.me/book/adamcatlace.jpg" />
+    	</div>
+    </div>
+    <hr>
+    <div class="path">
+    	<img src="http://lea.verou.me/book/adamcatlace.jpg" class="avatar-2" />
+    </div>
+  </body>
+</html>

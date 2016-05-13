@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>Loop Background（循环的背景）</title>
+    <title>循环的背景</title>
     <style>
       html, body {
         margin: 0;
@@ -21,9 +21,9 @@
 
       .bg {
         -webkit-animation: slide 30s linear 0s infinite;
-        -moz-animation:    slide 30s linear 0s infinite;
-        -o-animation:      slide 30s linear 0s infinite;
-        animation:         slide 30s linear 0s infinite;
+           -moz-animation: slide 30s linear 0s infinite;
+             -o-animation: slide 30s linear 0s infinite;
+                animation: slide 30s linear 0s infinite;
       }
 
       .bg::after {
@@ -32,23 +32,23 @@
       }
 
       @-webkit-keyframes slide {
-        0%    { transform: translateX(0); }
-        100%	{ transform: translateX(-100%); }
+        from { transform: translateX(0); }
+        to   { transform: translateX(-100%); }
       }
 
       @-moz-keyframes slide {
-        0%    { transform: translateX(0); }
-        100%	{ transform: translateX(-100%); }
+        from { transform: translateX(0); }
+        to   { transform: translateX(-100%); }
       }
 
       @-o-keyframes slide {
-        0%    { transform: translateX(0); }
-        100%	{ transform: translateX(-100%); }
+        from { transform: translateX(0); }
+        to   { transform: translateX(-100%); }
       }
 
       @keyframes slide {
-        0%    { transform: translateX(0); }
-        100%	{ transform: translateX(-100%); }
+        from { transform: translateX(0); }
+        to   { transform: translateX(-100%); }
       }
 
       .content {
@@ -57,7 +57,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 150px;
+        height: 140px;
         margin: auto;
         text-align: center;
 
@@ -71,17 +71,17 @@
         line-height: 5vmin;
 
         -webkit-text-shadow: 3px 3px 6px #CCC;
-        -moz-text-shadow:    3px 3px 6px #CCC;
-        -o-text-shadow:      3px 3px 6px #CCC;
-        text-shadow:         3px 3px 6px #CCC;
+           -moz-text-shadow: 3px 3px 6px #CCC;
+             -o-text-shadow: 3px 3px 6px #CCC;
+                text-shadow: 3px 3px 6px #CCC;
 
         -webkit-user-select: none;
-        -moz-user-select:    none;
-        -o-user-select:      none;
-        user-select:         none;
+           -moz-user-select: none;
+             -o-user-select: none;
+                user-select: none;
       }
 
-      .title {
+      span {
         display: block;
         font-size: 40px;
         font-size: 5vh;
@@ -90,11 +90,6 @@
         margin-bottom: 3vh;
         margin-bottom: 3vmin;
       }
-
-      a {
-        color: #3399ff;
-        text-decoration: none;
-			}
     </style>
   </head>
 
@@ -102,8 +97,7 @@
     <div class="bg"></div>
 
     <div class="content">
-      <span class="title">这是一个循环的背景</span>
-      点击<a href="javascript:window.opener=null;window.open('','_self');window.close();">此处</a>关闭
+      <span>这是一个循环的背景</span>
     </div>
   </body>
 </html>

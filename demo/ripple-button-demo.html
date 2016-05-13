@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>涟漪按钮</title>
+    <style>
+      button {
+        position: relative;
+        margin: 100px auto;
+        display: block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        outline: none;
+      }
+      .success {
+        background-color: #5cb85c;
+      }
+      .danger {
+        background-color: #d9534f;
+      }
+      .warning {
+        background-color: #ec971f;
+      }
+      .small {
+        width: 150px;
+        height: 50px;
+      }
+      .big {
+        width: 200px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="success ripple-button">Button</button>
+    <button class="danger small ripple-button">Button</button>
+    <button class="warning big ripple-button">Button</button>
+
+    <script>
+      (function () {
+        var buttons = document.getElementsByClassName('ripple-button'),
+            speed = 10    // speed 1
+
+        if (buttons.length > 0) {
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].onmousedown = function (e) {    // button down
+              if (this.children.length) return false;    // prohibit ripples appear twice, but there are some problems
+              var e = e || window.event,
+                  offsetX = e.offsetX,
+                  offsetY = e.offsetY,
+                  radiusX = (this.offsetWidth - offsetX > offsetX ? this.offsetWidth - offsetX : offsetX),
+                  radiusY = (this.offsetHeight - offsetY > offsetY ? this.offsetHeight - offsetY : offsetY),
+                  offsetSize = Math.sqrt(Math.pow(radiusX, 2) + Math.pow(radiusY, 2)),
+                  inner = document.createElement('div')
+
+              inner.style.position = 'absolute'
+              inner.style.backgroundColor = 'rgba(255,255,255,0.3)'
+              inner.style.borderRadius = '50%'
+
+              this.appendChild(inner)
+
+              var interval = setInterval(function () {
+                inner.style.width = (inner.offsetWidth + speed) + 'px'
+                inner.style.height = (inner.offsetHeight + speed) + 'px'
+                inner.style.left = (offsetX - inner.offsetWidth / 2) + 'px'
+                inner.style.top = (offsetY - inner.offsetHeight / 2) + 'px'
+                inner.style.opacity = inner.offsetWidth / offsetSize / 2
+
+                if (inner.offsetWidth >= offsetSize * 2 && inner.offsetHeight >= offsetSize * 2) {
+                  clearInterval(interval)
+                }
+              }, 17)    // speed 2
+            }
+
+            buttons[i].onmouseup = function (e) {
+              if (!this.children.length) return false;    // prohibit ripples appear twice, but there are some problems
+              var e = e || window.event,
+                  that = this,
+                  inner = this.children[0]
+
+              var interval = setInterval(function () {
+                inner.style.opacity = inner.style.opacity - speed / that.offsetWidth
+                if (inner.style.opacity <= 0) {
+                  try {
+                    that.removeChild(inner);
+                  } catch (e) {
+                    console.log(e)
+                  }
+                  clearInterval(interval);
+                }
+              }, 17)    // speed of change of opacity
+            }
+          }
+        } else {
+          console.log('not find ".ripple-button"')
+        }
+      })()
+    </script>
+  </body>
+</html>

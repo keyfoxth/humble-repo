@@ -29,4 +29,4 @@
   } else {
     console.log('not find ".line-scanning"')
   }
-})();
+})()

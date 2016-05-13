@@ -55,4 +55,4 @@
   } else {
     console.log('not find ".ripple-button"')
   }
-})();
+})()

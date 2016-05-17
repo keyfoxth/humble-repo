@@ -6,7 +6,6 @@
     <style>
       html, body, div, figure, table, tbody, tr, td, pre, span {
         margin: 0;
-        padding: 0;
       }
       table {
         margin: 0 20px;
@@ -17,7 +16,7 @@
       .method {
         width: 300px;
         height: 300px;
-        display: flex;
+        display: -webkit-box;
       }
       .code-box {
         flex: 1;
@@ -67,22 +66,20 @@
         z-index: 10;
       }
       .method-1::after {
-        content: "class=\"father father-1\"";
+        content: "father-1";
       }
       .method-2::after {
-        content: "class=\"father father-2\"";
+        content: "father-2";
       }
       .method-3::after {
-        content: "class=\"father father-3\"";
+        content: "father-3";
       }
     </style>
   </head>
   <body>
-    <span>请使用 Chrome 打开</span>
-    <hr>
     <div class="method method-1">
       <div class="father father-1">
-        <div class="son son-1">class="son son-1"</div>
+        <div class="son son-1">son-1</div>
       </div>
       <div class="code-box">
         <figure>
@@ -107,7 +104,7 @@
     <hr>
     <div class="method method-2">
       <div class="father father-2">
-        <div class="son son-2">class="son son-2"</div>
+        <div class="son son-2">son-2</div>
       </div>
       <div class="code-box">
         <figure>
@@ -134,7 +131,7 @@
     <hr>
     <div class="method method-3">
       <div class="father father-3">
-        <div class="son son-3">class="son son-3"</div>
+        <div class="son son-3">son-3</div>
       </div>
       <div class="code-box">
         <figure>

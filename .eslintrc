@@ -1,0 +1,8 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": "vue",
+  "rules": {
+    "no-useless-escape": 0,
+  }
+}
